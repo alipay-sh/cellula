@@ -8,13 +8,6 @@
     cellula.QueryElement = new cellula.Class('QueryElement',{
         //细胞核存放数据
         nucleus:null,
-        
-        getProp : function(name){
-            return this.data[name];
-        },
-        validate : function(data, el){
-            
-        },
         init : function (cfg) {
             if (UtilTools.isObject(cfg)) {
                 for (var n in this) {
@@ -31,8 +24,11 @@
         formExplain:'请填写',
         render:function(){
             this._super();
+            var input =  $(this.rootNode).find('input').get(0);
+            var inputElV =  input.value;
+            if(inputElV) this.nucleus.set('value',inputElV);
             var inputV = this.nucleus.get('value');
-            $(this.rootNode).find('input').get(0).value = inputV;
+            input.value = (inputV)?inputV:'';
         },
         registerEvents:function(){
             var that = this;
@@ -51,17 +47,29 @@
             $(this.rootNode).removeClass('mi-form-item-error');
             $(this.rootNode).find('.mi-form-explain').get(0).innerHTML =this.formExplain;
         }
-
-
     }).inherits(cellula.QueryElement);
-
-
-
-
 })(Cellula);
 
 
-
-var ElementFactory = function (typeClass, elements) {
-
-}
+/**
+ * 查询元素产出工厂
+ * @param typeClass
+ * @param nucleus
+ */
+var QueryElementFactory = function (elements) {
+    if (!Cellula._util.isArray(elements)) {
+        elements = [elements];
+    }
+    var result = [];
+    Cellula._util.each(elements,function(item,index){
+        if(item.key && item.classType && item.rootNode){
+            var tmpNuCl = new Cellula.Class(item.key,{
+                validate:(item.validate)?item.validate:function(){}
+            }).inherits(Cellula.Nucleus);
+            item.nucleus = new tmpNuCl({value:item.value});
+            var tmp = new item.classType(item);
+            result.push(tmp);
+        }
+    })
+    return result;
+};

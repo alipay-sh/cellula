@@ -43,9 +43,18 @@
             <div class="mi-form-item" id="J_field1">
                 <label class="mi-label">
                     <span class="required">*</span><!-- 必填*号可选 -->
-                    表单项：
+                    表单1项：
                 </label>
-                <input type="text" class="mi-input" />
+                <input type="text" class="mi-input" value="12345678"/>
+                <div class="mi-form-explain">这里显示提示信息。</div>
+                <!-- 帮助文案可选 -->
+            </div>
+             <div class="mi-form-item" id="J_field2">
+                <label class="mi-label">
+                    
+                    表单2项：
+                </label>
+                <input type="text" class="mi-input" value=""/>
                 <div class="mi-form-explain">这里显示提示信息。</div>
                 <!-- 帮助文案可选 -->
             </div>
@@ -75,7 +84,8 @@
 <script type="text/javascript" src="searchingScene/queryElement.js"></script>
 
 <script type="text/javascript">
-    var BatchNo = new Cellula.Class('BatchNo',{
+    //定义查询场景中 查询元素数据的数据类型
+    /* var BatchNo = new Cellula.Class('BatchNo',{
         validate:function(data, el){
            var v = data.value;
            if(v && isNaN(Number(v))){
@@ -83,15 +93,28 @@
                return 'must be a number!';
            }
         }
-    }).inherits(Cellula.Nucleus);
-    var batchNo = new BatchNo({
-        value:1234
-    });
-    var myElement = new Cellula.QueryElement.Input({
-      nucleus:batchNo,
-      formExplain:'请填写批次号。',
-      rootNode:$("#J_field1")
-    })
+    }).inherits(Cellula.Nucleus); */
+
+    var myElement = QueryElementFactory([{
+        key:'BatchNo',
+        classType:Cellula.QueryElement.Input,
+        formExplain:'请填写批次号。',
+        rootNode:$("#J_field1"),
+        validate:function(data, el){
+           var v = data.value ;
+           if(v && isNaN(Number(v))){
+               console.log('must be a number');
+               return 'must be a number!';
+           }
+        }
+    },
+    {
+        key:'BatchNo2',
+        classType:Cellula.QueryElement.Input,
+        formExplain:'请填写批次号2。',
+        rootNode:$("#J_field2")
+    }
+    ]);
 
 </script>
 </body>

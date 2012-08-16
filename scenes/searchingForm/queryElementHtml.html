@@ -3,25 +3,25 @@
 <head>
     <meta charset="utf-8">
     <title>the-simple-way-searchingForm</title>
-     <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://dev.assets.alipay.net/al/alice.base-1.0.css"/>
-    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://dev.assets.alipay.net/al/alice.components.mi-font-1.0-full.css"/>
-    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://dev.assets.alipay.net/al/alice.components.mi-function-1.0-full.css"/>
-    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://dev.assets.alipay.net/al/alice.components.mi-grid-1.0-full.css"/>
+     <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://assets.alipay.com/al/alice.base-1.0.css"/>
+    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://assets.alipay.com/al/alice.components.mi-font-1.0-full.css"/>
+    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://assets.alipay.com/al/alice.components.mi-function-1.0-full.css"/>
+    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://assets.alipay.com/al/alice.components.mi-grid-1.0-full.css"/>
 
-    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://dev.assets.alipay.net/al/alice.components.mi-header-1.0-full.css"/>
-    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://dev.assets.alipay.net/al/alice.components.mi-footer-1.0-full.css"/>
-    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://dev.assets.alipay.net/al/alice.components.mi-table-1.0-full.css"/>
+    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://assets.alipay.com/al/alice.components.mi-header-1.0-full.css"/>
+    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://assets.alipay.com/al/alice.components.mi-footer-1.0-full.css"/>
+    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://assets.alipay.com/al/alice.components.mi-table-1.0-full.css"/>
 
-    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://dev.assets.alipay.net/al/alice.components.mi-form-1.0-full.css"/>
-    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://dev.assets.alipay.net/al/alice.components.mi-button-1.0-full.css"/>
-    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://dev.assets.alipay.net/al/alice.components.mi-tip-1.0-full.css"/>
+    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://assets.alipay.com/al/alice.components.mi-form-1.0-full.css"/>
+    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://assets.alipay.com/al/alice.components.mi-button-1.0-full.css"/>
+    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://assets.alipay.com/al/alice.components.mi-tip-1.0-full.css"/>
 
-    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://dev.assets.alipay.net/al/alice.components.mi-notice-1.0-full.css"/>
-    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://dev.assets.alipay.net/al/alice.components.mi-message-1.0-full.css"/>
-    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://dev.assets.alipay.net/al/alice.components.mi-line-1.0-full.css"/>
+    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://assets.alipay.com/al/alice.components.mi-notice-1.0-full.css"/>
+    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://assets.alipay.com/al/alice.components.mi-message-1.0-full.css"/>
+    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://assets.alipay.com/al/alice.components.mi-line-1.0-full.css"/>
 
-    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://dev.assets.alipay.net/al/alice.components.mi-paging-1.0-full.css"/>
-    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://dev.assets.alipay.net/al/alice.components.mi-tab-1.0-full.css"/>
+    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://assets.alipay.com/al/alice.components.mi-paging-1.0-full.css"/>
+    <link type="text/css" media="screen" charset="utf-8" rel="stylesheet" href="http://assets.alipay.com/al/alice.components.mi-tab-1.0-full.css"/>
 
     <style type="text/css">
         .section {
@@ -57,6 +57,21 @@
                 <input type="text" class="mi-input" value=""/>
                 <div class="mi-form-explain">这里显示提示信息。</div>
                 <!-- 帮助文案可选 -->
+            </div>
+
+            <div class="mi-form-item mi-form-item-cue" id="J_regDate">
+                <label class="mi-label">注册时间：</label>
+                <input id="J_regDate_input" name="beginDate" type="text" class="mi-input mi-input-hover" value="2012-01-01" />
+                <div class="mi-form-explain">注册时间, 格式为 yyyy-mm-dd</div>
+            </div>
+
+           <div class="mi-form-item mi-form-item-cue" id="J_dates">
+                <label class="mi-label">创建时间：</label>
+                <input id="J_beginDate" name="beginDate" type="text" class="mi-input mi-input-hover" value="2012-01-01" />
+                <span class="mi-form-spliter">到</span>
+                <input id="J_endDate" name="endDate" type="text" class="mi-input" value="2012-02-03" />
+
+                <div class="mi-form-explain">起始日期, 格式为 yyyy-mm-dd</div>
             </div>
         </form>
     </div>
@@ -107,13 +122,26 @@
                return 'must be a number!';
            }
         }
-    },
-    {
+    },{
         key:'BatchNo2',
         classType:Cellula.QueryElement.Input,
         formExplain:'请填写批次号2。',
         rootNode:$("#J_field2")
+    }, {
+        key:'regDate',
+        classType:Cellula.QueryElement.Calendar,
+        formExplain:'请填写注册日期。',
+        rootNode:$("#J_regDate")
+    },{
+        key:'dates',
+        classType:Cellula.QueryElement.DoubleCalendar,
+        formExplain:'请填写注册日期。',
+        startCalenderRoot:$("#J_beginDate"),
+        endCalenderRoot:$("#J_endDate"),
+        rootNode:$("#J_dates")
     }
+
+
     ]);
 
 </script>

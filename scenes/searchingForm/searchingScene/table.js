@@ -1,10 +1,11 @@
 /**
- * Created by JetBrains WebStorm.
- * User: hanyee
- * Date: 12-6-27
- * Time: 下午2:55
- * To change this template use File | Settings | File Templates.
+ * @fileOverview SearchingScene's table module definition based on Cellula.
+ * @description: defines datatable module
+ * @namespace: Cellula
+ * @version: 0.3.1
+ * @author: @hanyee
  */
+
 (function(cellula){
     var util = cellula._util;
     this.DataTable = new cellula.Class('DataTable', {
@@ -44,9 +45,9 @@
                 //this.applyInterface('error');
                 //util.removeClass(this.tipNodes.noResult, this.hideClass);
                 this.showNoResult();
-                return ;
+                return false;
             }
-            data = data.dataTable;
+            //data = data.dataTable;
             var table = root.getElementsByTagName('table')[0],
                 thead = table.getElementsByTagName('thead')[0],
                 tbody = table.getElementsByTagName('tbody')[0],
@@ -56,11 +57,11 @@
             if(tbody) table.removeChild(tbody);
 
             var div = document.createElement('div');
-            div.innerHTML = '<table><thead>' + util.parseTpl(this.tableTpl.head, data) + '</thead></table>';
+            div.innerHTML = '<table><thead>' + util.parseTpl(this.tableTpl.head, data.dataTable) + '</thead></table>';
             thead = div.getElementsByTagName('thead')[0];
             table.appendChild(thead);
 
-            div.innerHTML = '<table><tbody>' + util.parseTpl(this.tableTpl.body, data) + '</tbody></table>';
+            div.innerHTML = '<table><tbody>' + util.parseTpl(this.tableTpl.body, data.dataTable) + '</tbody></table>';
             tbody = div.getElementsByTagName('tbody')[0];
             table.appendChild(tbody);
 
@@ -68,6 +69,7 @@
             this.show(true);
 
             this.registerEvents();
+            this.applyInterface('render',data);
         }
 
     }).inherits(cellula.Cell);
